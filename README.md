@@ -1,0 +1,69 @@
+# Vue2.x vs Vue3.x 簡略差異解說
+> https://vue3js.cn/
+
+
+#### 建立vue instance方法不同
+
+```javascript
+// vue2.x
+
+let app = new Vue({
+  el: '#app',
+  data: {...},
+  methods: {...},
+  ...
+})
+
+// vue3.x
+const app = Vue.createApp({
+  data() {
+    return {...}
+  },
+  methods: {...},
+  ...
+})
+
+const vm = app.mount('#app');
+
+```
+
+#### [New] [teleport](https://v3.cn.vuejs.org/guide/teleport.html)
+```javascript
+<teleport to="body">
+  modal or others...
+</teleport>
+```
+
+#### [New] [Fragments](https://v3.vuejs.org/guide/migration/fragments.html)
+
+#### [New] [Suspense](https://v3.cn.vuejs.org/guide/migration/suspense.html#%E4%BB%8B%E7%BB%8D)
+
+#### v-for mixed v-if (不推薦)
+vue2.x 混在一起用跟 vue3.x 混在一起用的結果不一樣
+	- vue2.x : for --> if
+	- vue3.x : if --> for
+
+#### 生命週期的變化
+![](https://i.imgur.com/vbLehZC.png)
+
+> 如果要在vue3.x使用生命週期要引入。
+```javascript
+import { onMounted, ... } from "vue";
+```
+
+#### vue3.x TypeScript支援度更好
+
+#### vue3.x 可向下兼容 vue2.x (大部分可以)
+
+#### vue2.x 與 vue3.x 雙向綁定核心改變
+point: object.defineproperty vs Proxy
+reference:  https://juejin.cn/post/7001999813344493581
+
+#### watch, watchEffect
+
+#### composition API vs options API
+reference: https://juejin.cn/post/6891640356543627278
+reference: [掘金](https://juejin.cn/post/6954996635617198093)
+[Introduction | Vue.js](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api)
+
+#tech
