@@ -54,7 +54,7 @@ https://v3.vuejs.org/guide/migration/fragments.html
 https://v3.cn.vuejs.org/guide/migration/suspense.html#%E4%BB%8B%E7%BB%8D
 ``` javascript
 <template>
-  <suspense>
+  <Suspense>
     <template #default> // 有資料時
      {{ dataList }}
     </template>
@@ -63,10 +63,11 @@ https://v3.cn.vuejs.org/guide/migration/suspense.html#%E4%BB%8B%E7%BB%8D
         Loading ...
       </div>
     </template>
-  </suspense>
+  </Suspense>
 </template>
 
 ```
+
 
 #### v-for mixed v-if (不推薦)
 vue2.x 混在一起用跟 vue3.x 混在一起用的結果不一樣
@@ -76,26 +77,15 @@ vue2.x 混在一起用跟 vue3.x 混在一起用的結果不一樣
 #### 生命週期的變化
 ![](https://i.imgur.com/vbLehZC.png)
 
-> 如果要在vue3.x使用生命週期要引入。
-```javascript
-import { onMounted, ... } from "vue";
-```
-
 #### vue3.x TypeScript支援度更好
 
 #### vue3.x 可向下兼容 vue2.x (大部分可以)
 
 #### vue2.x 與 vue3.x 雙向綁定核心改變
-point: object.defineproperty vs Proxy
+**point:** object.defineproperty vs Proxy
 reference:  https://juejin.cn/post/7001999813344493581
 
-#### watch, watchEffect
-
 #### composition API vs options API
-reference: https://juejin.cn/post/6891640356543627278
-reference: [掘金](https://juejin.cn/post/6954996635617198093)
-[Introduction | Vue.js](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api)
-
-#### slot方法改變 , 移除了哪些項目.. v-model升級
-
-#tech
+reference: 
+- https://juejin.cn/post/6891640356543627278
+- https://juejin.cn/post/6954996635617198093
