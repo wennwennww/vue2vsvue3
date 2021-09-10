@@ -13,18 +13,8 @@ function reactive(obj, key, value) {
   })
 }
 
-
 const data = {
   name: 'wenwen',
 }
 
 Object.keys(data).forEach(key => reactive(data, key, data[key]));
-
-console.log(data.name);
-data.name = '文文文';
-console.log(data.name);
-
-// data.eat = '餅乾';
-// console.log(data.eat);
-// data.eat = '飲料'
-// console.log(data.eat);

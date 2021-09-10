@@ -1,9 +1,5 @@
 # Vue2.x vs Vue3.x 簡略差異解說
-> https://vue3js.cn/
-
-
 #### 建立vue instance方法不同
-
 ```javascript
 // vue2.x
 
@@ -27,16 +23,50 @@ const vm = app.mount('#app');
 
 ```
 
-#### [New] [teleport](https://v3.cn.vuejs.org/guide/teleport.html)
+#### Teleport 內建物件
+https://v3.cn.vuejs.org/guide/teleport.html
 ```javascript
 <teleport to="body">
   modal or others...
 </teleport>
 ```
 
-#### [New] [Fragments](https://v3.vuejs.org/guide/migration/fragments.html)
+#### Fragments 內建物件
+https://v3.vuejs.org/guide/migration/fragments.html
+```javascript
+// vue2.x
+<template>
+	<div>
+		<button>Add</button>
+		<p> {{count}}</p>
+	</div>
+</template>
 
-#### [New] [Suspense](https://v3.cn.vuejs.org/guide/migration/suspense.html#%E4%BB%8B%E7%BB%8D)
+// vue3.x
+<template>
+	<button>Add</button>
+	<p> {{count}}</p>
+</template>
+
+```
+
+#### Suspense 內建物件
+https://v3.cn.vuejs.org/guide/migration/suspense.html#%E4%BB%8B%E7%BB%8D
+``` javascript
+<template>
+  <suspense>
+    <template #default> // 有資料時
+     {{ dataList }}
+    </template>
+    <template #fallback> // 等待資料時
+      <div>
+        Loading ...
+      </div>
+    </template>
+  </suspense>
+</template>
+
+```
 
 #### v-for mixed v-if (不推薦)
 vue2.x 混在一起用跟 vue3.x 混在一起用的結果不一樣
@@ -65,5 +95,7 @@ reference:  https://juejin.cn/post/7001999813344493581
 reference: https://juejin.cn/post/6891640356543627278
 reference: [掘金](https://juejin.cn/post/6954996635617198093)
 [Introduction | Vue.js](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api)
+
+#### slot方法改變 , 移除了哪些項目.. v-model升級
 
 #tech

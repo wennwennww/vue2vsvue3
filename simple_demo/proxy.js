@@ -19,14 +19,3 @@ function reactive(target) {
 
 const proxyData = reactive(data);
 
-console.log(proxyData.name);
-proxyData.name = '文文文';
-console.log(proxyData.name);
-
-
-// proxyData.eat = '餅乾';
-// console.log(proxyData.eat);
-// proxyData.hobby = '打電動';
-// console.log(proxyData.hobby);
-
-
